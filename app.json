@@ -21,10 +21,21 @@
           "location",
           "fetch"
         ],
+        "locationAlwaysAndWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location.",
         "NSLocationWhenInUseUsageDescription": "Allows App to use location services in the foreground and background.",
         "NSLocationAlwaysAndWhenInUseUsageDescription": "Allows App to use location services in the foreground and background.",
         "NSLocationAlwaysUsageDescription": "Allows App to use location services in the foreground and background."
       }
+    },
+    "infoPlist": {
+      "UIBackgroundModes": [
+        "location",
+        "fetch"
+      ],
+      "locationAlwaysAndWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location.",
+      "NSLocationWhenInUseUsageDescription": "Allows App to use location services in the foreground and background.",
+      "NSLocationAlwaysAndWhenInUseUsageDescription": "Allows App to use location services in the foreground and background.",
+      "NSLocationAlwaysUsageDescription": "Allows App to use location services in the foreground and background."
     },
     "android": {
       "adaptiveIcon": {

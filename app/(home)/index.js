@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { Text, View } from 'react-native'
+import { Pressable, Text, View } from 'react-native'
 import * as Location from "expo-location";
 import * as LocationGeocoding from "expo-location";
+import { ScrollView, TextInput } from 'react-native-gesture-handler';
+import { Octicons, Ionicons } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
+import Carousel from '../../components/Carousel';
+import Categories from '../../components/Categories';
 
 
 const index = () => {
@@ -73,9 +78,57 @@ const index = () => {
     
 
   return (
-    <View>
-        <Text>Home screen</Text>
-    </View>
+    <ScrollView style={{ flex: 1, backgroundColor: "#f8f8f8" }}>
+      <View
+        style={{
+          flexDirection: "row",
+          alignItems: "center",
+          gap: 12,
+          padding: 10,
+        }}
+      >
+        <Octicons name="location" size={24} color="#E52850" />
+        <View style={{flex:1}}>
+          <Text style={{ fontSize: 15, fontWeight: "500" }}>Deliver To</Text>
+          <Text style={{ color: "gray", fontSize: 16, marginTop: 3 }}>
+            {displayCurrentAddress}
+          </Text>
+        </View>
+        <Pressable 
+           style={{
+            backgroundColor: "#6CB4EE",
+            width: 40,
+            height: 40,
+            borderRadius: 20,
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Text>S</Text>
+        </Pressable>
+      </View>
+
+      <View
+         style={{
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "space-between",
+          borderWidth: 1,
+          borderColor: "#C0C0C0",
+          paddingVertical: 8,
+          paddingHorizontal: 10,
+          borderRadius: 11,
+          marginTop: 10,
+          marginHorizontal: 10,
+        }}
+      >
+         <TextInput placeholder="Search for food, hotels" />
+        <AntDesign name="search1" size={24} color="#E52B50" />
+      </View>
+
+      <Carousel />
+      <Categories/>
+    </ScrollView>
   )
 }
 
